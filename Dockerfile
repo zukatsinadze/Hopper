@@ -31,6 +31,14 @@ WORKDIR /hopper
 
 RUN ./build.sh
 
+
+RUN --mount=type=cache,target=/var/cache/apt apt-get update && apt-get full-upgrade -y && \
+    DEBIAN_FRONTEND="noninteractive" \
+    apt-get -y install --no-install-suggests --no-install-recommends \
+    gcc g++ libncurses5  clang-12 llvm-12-dev
+
+RUN ./update_clang.sh 12 200
+
 # RUN mkdir /llvm
 # ENV PATH=/llvm/bin:$PATH
 # ENV LD_LIBRARY_PATH=/llvm/lib:$LD_LIBRARY_PATH
@@ -38,3 +46,4 @@ RUN ./build.sh
 RUN mkdir /fuzz_lib
 RUN mkdir /fuzz
 WORKDIR /fuzz
+
