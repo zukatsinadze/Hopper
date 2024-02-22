@@ -39,6 +39,7 @@ fi
 
 LDFLAGS="$CXXFLAGS" LD=$CXX $TARGET/repo/configure \
     --prefix="$WORK_PROFILE" \
+    --enable-shared \
     --enable-vp9-highbitdepth \
     --disable-unit-tests \
     --disable-examples \
@@ -66,6 +67,7 @@ fi
 
 LDFLAGS="$CXXFLAGS" LD=$CXX $TARGET/repo/configure \
     --prefix="$WORK" \
+    --enable-shared \
     --enable-vp9-highbitdepth \
     --disable-unit-tests \
     --disable-examples \

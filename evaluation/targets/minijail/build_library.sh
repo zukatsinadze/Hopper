@@ -34,7 +34,7 @@ export CXXFLAGS=$CXXFLAGS_BASE" -fprofile-instr-generate -fcoverage-mapping -g"
 echo "make clean"
 make -j$(nproc) clean
 echo "make"
-make -j$(nproc) OUT="$WORK/lib" CC_STATIC_LIBRARY\(libminijail.pie.a\)
+make -j$(nproc) OUT="$WORK/lib" 
 
 
 # Compile library for fuzzing
@@ -44,7 +44,7 @@ export CXXFLAGS=$CXXFLAGS_BASE
 echo "make clean"
 make -j$(nproc) clean
 echo "make"
-make -j$(nproc) OUT="$WORK/lib" CC_STATIC_LIBRARY\(libminijail.pie.a\)
+make -j$(nproc) OUT="$WORK/lib"
 cp *.h $WORK/include
 
 echo "[INFO] Library installed in: $WORK"

@@ -1,15 +1,6 @@
 #!/bin/bash
 set -e
 
-##
-# Pre-requirements:
-# - env TARGET: path to target work dir
-# - env OUT: path to directory where artifacts are stored
-# - env CC, CXX, FLAGS, LIBS, etc...
-##
-
-# export TARGET=/tmp/libtiff
-
 WORK="$TARGET/work"
 rm -rf "$WORK"
 mkdir -p "$WORK"
