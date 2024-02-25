@@ -44,7 +44,7 @@ export CXXFLAGS=$CXXFLAGS_BASE
 echo "make clean"
 make -j$(nproc) clean
 echo "make"
-make -j$(nproc) OUT="$WORK/lib"
+make -j$(nproc) OUT="$WORK/lib" 
 cp *.h $WORK/include
 
 echo "[INFO] Library installed in: $WORK"

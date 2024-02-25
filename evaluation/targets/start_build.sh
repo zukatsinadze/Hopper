@@ -11,3 +11,5 @@ cd ${TARGET_NAME}
 ./preinstall.sh
 ./fetch.sh
 ./build_library.sh
+hopper compile
+
