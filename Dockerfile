@@ -32,9 +32,7 @@ WORKDIR /hopper
 RUN ./build.sh
 
 
-RUN --mount=type=cache,target=/var/cache/apt apt-get update && apt-get full-upgrade -y && \
-    DEBIAN_FRONTEND="noninteractive" \
-    apt-get -y install --no-install-suggests --no-install-recommends \
+RUN apt-get -y install --no-install-suggests --no-install-recommends \
     gcc g++ libncurses5  clang-12 llvm-12-dev
 
 RUN ./update_clang.sh 12 200

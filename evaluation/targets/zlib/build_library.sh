@@ -30,6 +30,7 @@ cd "$TARGET/repo/zlib_build_cov"
 echo "cmake"
 # Compile library for coverage
 cmake .. -DCMAKE_INSTALL_PREFIX=$WORK_PROFILE -DBUILD_SHARED_LIBS=on \
+	-DCMAKE_BUILD_TYPE=Debug \
         -DCMAKE_C_FLAGS_DEBUG="-fprofile-instr-generate -fcoverage-mapping -g" \
         -DCMAKE_CXX_FLAGS_DEBUG="-fprofile-instr-generate -fcoverage-mapping -g" \
         -DBENCHMARK_ENABLE_GTEST_TESTS=off \

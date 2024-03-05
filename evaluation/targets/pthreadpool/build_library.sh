@@ -21,6 +21,7 @@ mkdir "$TARGET/repo/pthreadpool_cov"
 cd "$TARGET/repo/pthreadpool_cov"
 # Compile library for coverage
 cmake .. -DCMAKE_INSTALL_PREFIX=$WORK_PROFILE -DBUILD_SHARED_LIBS=on \
+	-DCMAKE_BUILD_TYPE=Debug \
         -DCMAKE_C_FLAGS_DEBUG="-fprofile-instr-generate -fcoverage-mapping -g" \
         -DCMAKE_CXX_FLAGS_DEBUG="-fprofile-instr-generate -fcoverage-mapping -g" \
         -DBENCHMARK_ENABLE_GTEST_TESTS=off \
@@ -32,6 +33,10 @@ echo "make"
 make -j$(nproc)
 echo "make install"
 make install
+
+cd ..
+mkdir "$TARGET/repo/pthreadpool_fuzz"
+cd "$TARGET/repo/pthreadpool_fuzz"
 
 
 cmake .. -DCMAKE_INSTALL_PREFIX=$WORK -DBUILD_SHARED_LIBS=on \
