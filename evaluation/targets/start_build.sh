@@ -12,4 +12,5 @@ cd ${TARGET_NAME}
 ./fetch.sh
 ./build_library.sh
 hopper compile
+./compile_profile.sh
 
